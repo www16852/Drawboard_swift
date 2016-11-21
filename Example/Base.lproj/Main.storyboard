@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6W-9s-fKe">
+                                <rect key="frame" x="188" y="502" width="30" height="30"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="recover:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F4v-hw-6w0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67k-hd-XmA">
+                                <rect key="frame" x="260" y="502" width="30" height="30"/>
+                                <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="cencelRecover:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mK2-PS-fbm"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0K-eW-JWg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
+                                <color key="backgroundColor" red="0.90629252042780251" green="0.91068728073947902" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="67k-hd-XmA" firstAttribute="leading" secondItem="m6W-9s-fKe" secondAttribute="trailing" constant="42" id="22q-il-Bu3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="67k-hd-XmA" secondAttribute="trailing" constant="14" id="6Ao-1g-WBH"/>
+                            <constraint firstItem="j0K-eW-JWg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NEs-b1-ajY"/>
+                            <constraint firstAttribute="trailing" secondItem="j0K-eW-JWg" secondAttribute="trailing" id="Ncy-70-MPS"/>
+                            <constraint firstItem="j0K-eW-JWg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="REs-sE-N6F"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m6W-9s-fKe" secondAttribute="bottom" constant="36" id="SSG-xh-qgw"/>
+                            <constraint firstItem="67k-hd-XmA" firstAttribute="top" secondItem="j0K-eW-JWg" secondAttribute="bottom" constant="3" id="fI1-3S-0cz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="67k-hd-XmA" secondAttribute="bottom" constant="36" id="gpU-XS-Eok"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="board" destination="j0K-eW-JWg" id="1CJ-01-B87"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.875" y="136.26760563380282"/>
+        </scene>
+    </scenes>
+</document>
