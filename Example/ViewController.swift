@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        drawView = DrawView(frame:board.frame, recordCounts:3)
+        drawView = DrawView(frame:board.frame, background:UIColor.gray, recordCounts:3)
         view.addSubview(drawView)
 
         // Do any additional setup after loading the view, typically from a nib.
