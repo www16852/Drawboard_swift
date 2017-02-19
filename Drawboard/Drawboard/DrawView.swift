@@ -14,18 +14,18 @@ public class DrawView:UIView {
     private var drawWidth:CGFloat = 5
     
     private var penView:PenView!
-    private var newDrawView:UIImageView!
+    private var backDrawView:UIImageView!
     private var drawRecord:ImageContainer!
 
 
     public init(frame:CGRect, background:UIColor = UIColor.white, recordCounts:Int = 1){
         super.init(frame: frame)
-        self.drawRecord = ImageContainer(saveLimit:recordCounts, first:makeScreenshot())
+        self.drawRecord = ImageContainer(saveLimit:recordCounts)
         self.backgroundColor = background
         self.penView = PenView(frame:self.bounds)
-        self.newDrawView = UIImageView(frame:self.bounds)
-        setupPreDrawView()
+        self.backDrawView = UIImageView(frame:self.bounds)
         setupPenView()
+        setupPreDrawView()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -40,8 +40,8 @@ public class DrawView:UIView {
     }
 
     private func setupPreDrawView(){
-        newDrawView.backgroundColor = UIColor.clear
-        self.addSubview(newDrawView)
+        backDrawView.backgroundColor = UIColor.clear
+        self.insertSubview(backDrawView, belowSubview: penView)
     }
 
     private func saveDrawView(image:UIImage){
@@ -51,13 +51,25 @@ public class DrawView:UIView {
     public func recover(){
         penView.setNeedsDisplay()
         drawRecord.recover()
-        newDrawView.image = drawRecord.getNowDrawView()
+        backDrawView.image = drawRecord.getNowDrawView()
     }
 
     public func cancelRecover(){
         penView.setNeedsDisplay()
         drawRecord.cancelRecover()
-        newDrawView.image = drawRecord.getNowDrawView()
+        backDrawView.image = drawRecord.getNowDrawView()
+    }
+    
+    public func clear(){
+        backDrawView.removeFromSuperview()
+        self.backDrawView = UIImageView(frame:self.bounds)
+        setupPreDrawView()
+        
+        drawRecord.clear()
+    
+        self.penView.removeFromSuperview()
+        self.penView = PenView(frame:self.bounds)
+        setupPenView()
     }
 
     func makeScreenshot() -> UIImage {
@@ -91,7 +103,7 @@ public class DrawView:UIView {
             penView.setNeedsDisplay()
         case .ended:
             let screenshot = makeScreenshot()
-            newDrawView.image = screenshot
+            backDrawView.image = screenshot
             saveDrawView(image: screenshot)
             penView.removeLines()
         default:break

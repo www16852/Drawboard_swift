@@ -13,16 +13,15 @@ class ImageContainer {
     let saveLimit:Int
 
     private var front = -1
-    private var recoveryCount = -1
+    private var recoveryCount = 0
     private var cancelRecoveryCount = 0
 
-    init(saveLimit:Int,first:UIImage) {
+    init(saveLimit:Int){
         self.saveLimit = saveLimit
         assert(saveLimit >= 1, "saveLimit need >= 1")
         for _ in 0..<saveLimit {
             preDrawViews.append(UIImage())
         }
-        push(image:first)
     }
 
     private func incFront(){
@@ -68,6 +67,14 @@ class ImageContainer {
             decFront()
             incCancelRecoveryCount()
         }
+    }
+    
+    func clear(){
+        for i in 0..<saveLimit {
+            preDrawViews[i] = UIImage()
+        }
+        recoveryCount = 0
+        cancelRecoveryCount = 0
     }
 
     func cancelRecover(){

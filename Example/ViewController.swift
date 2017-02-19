@@ -22,6 +22,10 @@ class ViewController: UIViewController {
         drawView.cancelRecover()
     }
     
+    @IBAction func clear(_ sender: UIButton) {
+        drawView.clear()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         drawView = DrawView(frame:board.frame, recordCounts:3)

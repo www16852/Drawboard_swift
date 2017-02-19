@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,6 +40,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="499"/>
                                 <color key="backgroundColor" red="0.90629252042780251" green="0.91068728073947902" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avt-xT-6jP">
+                                <rect key="frame" x="146" y="502" width="34" height="30"/>
+                                <state key="normal" title="clear"/>
+                                <connections>
+                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xHY-FD-lHc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -51,6 +58,8 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m6W-9s-fKe" secondAttribute="bottom" constant="36" id="SSG-xh-qgw"/>
                             <constraint firstItem="67k-hd-XmA" firstAttribute="top" secondItem="j0K-eW-JWg" secondAttribute="bottom" constant="3" id="fI1-3S-0cz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="67k-hd-XmA" secondAttribute="bottom" constant="36" id="gpU-XS-Eok"/>
+                            <constraint firstItem="m6W-9s-fKe" firstAttribute="leading" secondItem="Avt-xT-6jP" secondAttribute="trailing" constant="8" id="hJB-UA-PWc"/>
+                            <constraint firstItem="Avt-xT-6jP" firstAttribute="top" secondItem="j0K-eW-JWg" secondAttribute="bottom" constant="3" id="xhx-9y-mAi"/>
                         </constraints>
                     </view>
                     <connections>
